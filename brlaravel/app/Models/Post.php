@@ -9,6 +9,6 @@ class Post extends Model
     protected $fillable = ['title','body','category_id'];
 
     public function cetegory(){
-        return $this->belongsTo(Category::class)
+        return $this->belongsTo(Category::class);
     }
 }
