@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Post Manager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+     
+</head>
+<body class="p-6 md:p-12">
+
+    <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-6">
+            <div>
+                <h1 class="text-4xl font-extrabold text-slate-900 tracking-tight">Creative <span class="gradient-text">Studio.</span></h1>
+                <p class="text-slate-500 mt-2 font-medium text-lg">You have <span class="text-indigo-600">12 active stories</span> this week.</p>
+            </div>
+            
+            <a href="#" class="group relative inline-flex items-center gap-2 px-8 py-4 bg-slate-900 text-white font-bold rounded-2xl transition-all hover:bg-indigo-600 hover:shadow-[0_20px_50px_rgba(79,70,229,0.3)] overflow-hidden">
+                <span class="relative z-10 text-sm uppercase tracking-widest">Write New Story</span>
+                <i class="fas fa-arrow-right relative z-10 group-hover:translate-x-1 transition-transform"></i>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="post-card group relative bg-white border border-slate-100 rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+                <div class="h-56 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="post" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white text-sm font-medium">Read preview...</span>
+                    </div>
+                </div>
+                
+                <div class="p-8">
+                    <h3 class="text-xl font-bold text-slate-900 mb-4 line-clamp-2 leading-snug group-hover:text-indigo-600 transition-colors">
+                        How to architect scalable web applications in 2026
+                    </h3>
+                    
+                    <div class="flex items-center justify-between pt-6 border-t border-slate-50">
+                        <div class="flex gap-4">
+                            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 text-slate-400 hover:bg-indigo-50 hover:text-indigo-600 transition-all" title="Edit">
+                                <i class="fas fa-pen-nib text-sm"></i>
+                            </a>
+                            <form action="" method="POST">
+                                <button type="submit" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 text-slate-400 hover:bg-red-50 hover:text-red-600 transition-all" title="Delete">
+                                    <i class="fas fa-trash-alt text-sm"></i>
+                                </button>
+                            </form>
+                        </div>
+                        <span class="text-xs font-bold text-slate-300 uppercase tracking-widest leading-none">5 min read</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post-card group relative bg-white border border-slate-100 rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+                <div class="h-56 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80" alt="post" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white text-sm font-medium">Read preview...</span>
+                    </div>
+                </div>
+                
+                <div class="p-8">
+                    <h3 class="text-xl font-bold text-slate-900 mb-4 line-clamp-2 leading-snug group-hover:text-indigo-600 transition-colors">
+                        Why Tailwind CSS is still the king of styling
+                    </h3>
+                    
+                    <div class="flex items-center justify-between pt-6 border-t border-slate-50">
+                        <div class="flex gap-4">
+                            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 text-slate-400 hover:bg-indigo-50 hover:text-indigo-600 transition-all" title="Edit">
+                                <i class="fas fa-pen-nib text-sm"></i>
+                            </a>
+                            <form action="" method="POST">
+                                <button type="submit" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 text-slate-400 hover:bg-red-50 hover:text-red-600 transition-all" title="Delete">
+                                    <i class="fas fa-trash-alt text-sm"></i>
+                                </button>
+                            </form>
+                        </div>
+                        <span class="text-xs font-bold text-slate-300 uppercase tracking-widest leading-none">3 min read</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post-card group relative bg-white border border-slate-100 rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+                <div class="h-56 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1618477388954-7852f32655ec?auto=format&fit=crop&w=800&q=80" alt="post" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="text-white text-sm font-medium">Read preview...</span>
+                    </div>
+                </div>
+                
+                <div class="p-8">
+                    <h3 class="text-xl font-bold text-slate-900 mb-4 line-clamp-2 leading-snug group-hover:text-indigo-600 transition-colors">
+                        Mastering the Art of Typography in Web
+                    </h3>
+                    
+                    <div class="flex items-center justify-between pt-6 border-t border-slate-50">
+                        <div class="flex gap-4">
+                            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 text-slate-400 hover:bg-indigo-50 hover:text-indigo-600 transition-all" title="Edit">
+                                <i class="fas fa-pen-nib text-sm"></i>
+                            </a>
+                            <form action="" method="POST">
+                                <button type="submit" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 text-slate-400 hover:bg-red-50 hover:text-red-600 transition-all" title="Delete">
+                                    <i class="fas fa-trash-alt text-sm"></i>
+                                </button>
+                            </form>
+                        </div>
+                        <span class="text-xs font-bold text-slate-300 uppercase tracking-widest leading-none">8 min read</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
