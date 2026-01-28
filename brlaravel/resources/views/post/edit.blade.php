@@ -18,10 +18,13 @@
             <div class="absolute top-[-20%] right-[-10%] w-64 h-64 bg-indigo-600/20 rounded-full blur-3xl"></div>
         </div>
 
-        <form action="" method="POST" class="p-8 md:p-12 space-y-6">
+        <form action="{{ route('post.update',$post) }}" method="POST" class="p-8 md:p-12 space-y-6">
+            @csrf
+            @method('PUT')
+
             <div>
                 <label for="title" class="block text-sm font-bold text-slate-700 mb-2 ml-1">Article Title</label>
-                <input type="text" id="title" name="title" value="My Awesome Post" required
+                <input type="text" id="title" name="title" value="{{$post->titel}}" required
                     class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-4 focus:ring-indigo-50 focus:border-indigo-500 transition-all duration-200 text-slate-900 font-medium placeholder:text-slate-400"
                     placeholder="Enter a catchy title...">
             </div>
@@ -31,9 +34,9 @@
                 <div class="relative">
                     <select name="category_id" id="category_id" required
                         class="w-full appearance-none px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-4 focus:ring-indigo-50 focus:border-indigo-500 transition-all duration-200 text-slate-900 font-medium">
-                        <option value="1">Technology</option>
-                        <option value="2">Design</option>
-                        <option value="3">Lifestyle</option>
+                    @foreach($categories as $category)
+                        <option value="{{ $category->id}}">{{ $category->name}}</option>
+                    @endforeach
                     </select>
                     <div class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none text-slate-400">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
@@ -45,7 +48,7 @@
                 <label for="body" class="block text-sm font-bold text-slate-700 mb-2 ml-1">Content</label>
                 <textarea id="body" name="body" required rows="3"
                     class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-4 focus:ring-indigo-50 focus:border-indigo-500 transition-all duration-200 text-slate-900 font-medium placeholder:text-slate-400"
-                    placeholder="Write your story here..."></textarea>
+                    placeholder="Write your story here...">{{$post->body}}</textarea>
             </div>
 
             <div class="flex flex-col sm:flex-row items-center gap-4 pt-4">

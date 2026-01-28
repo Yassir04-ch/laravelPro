@@ -54,37 +54,35 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit()
+    public function edit(Post $post)
     {
-        return view('post.edit');
-        //
+         $categories = Category::all();
+
+        return view('post.edit',compact('post','categories'));
     }
 
 //   
      /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request,Post $post )
     {
-        $request->validate([
+       $validated = $request->validate([
             'title'=>'required|string|max:255',
             'body'=>'required|string',
             'category_id'=>'required|exists:categories,id',
         ]);
-        $post = Post::find($id);
-        $post->update($request->all());
+
+        $post->update($validated);
         return redirect()->route('post.index');
-        //
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Post $post)
     {
-         $post = Post::find($id);
-        $post->delete();
-
+         $post->delete();
         return redirect()->route('post.index');
     }
 }
