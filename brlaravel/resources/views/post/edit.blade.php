@@ -18,13 +18,13 @@
             <div class="absolute top-[-20%] right-[-10%] w-64 h-64 bg-indigo-600/20 rounded-full blur-3xl"></div>
         </div>
 
-        <form action="{{ route('post.update',$post) }}" method="POST" class="p-8 md:p-12 space-y-6">
+        <form action="{{ route('posts.update', $post)}}" method="POST" class="p-8 md:p-12 space-y-6">
             @csrf
             @method('PUT')
 
             <div>
                 <label for="title" class="block text-sm font-bold text-slate-700 mb-2 ml-1">Article Title</label>
-                <input type="text" id="title" name="title" value="{{$post->titel}}" required
+                <input type="text" id="title" name="title" value="{{ $post->title }}" required
                     class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-4 focus:ring-indigo-50 focus:border-indigo-500 transition-all duration-200 text-slate-900 font-medium placeholder:text-slate-400"
                     placeholder="Enter a catchy title...">
             </div>

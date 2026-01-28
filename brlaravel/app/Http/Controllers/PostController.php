@@ -74,7 +74,7 @@ class PostController extends Controller
         ]);
 
         $post->update($validated);
-        return redirect()->route('post.index');
+        return redirect()->route('posts.index');
     }
 
     /**
