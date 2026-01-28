@@ -35,7 +35,7 @@
                     <a href="{{ route('categories.edit', $category) }}" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 text-slate-400 hover:bg-blue-50 hover:text-blue-600 transition-all">
                         <i class="fas fa-pen text-sm"></i>
                     </a>
-                    <form action="{{route('categories.destroy',$category}}" method="POST">
+                    <form action="{{route('categories.destroy',$category) }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 text-slate-400 hover:bg-red-50 hover:text-red-600 transition-all">

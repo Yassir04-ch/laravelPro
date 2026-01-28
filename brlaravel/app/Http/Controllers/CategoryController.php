@@ -54,7 +54,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-       return view('categories.edit',compact('category'));
+       return view('category.edit',compact('category'));
     }
 
     /**
@@ -62,12 +62,12 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        $request->validate([
+        $validated = $request->validate([
             'name'=>'required',
             'description'=>'required'
         ]);
 
-        $category->update($request->all());
+        $category->update($validated);
 
         return redirect()->route('categories.index');
 
@@ -79,6 +79,6 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
          $category->delete();
-        return redirect()->route('categories.index')
+        return redirect()->route('categories.index');
     }
 }
