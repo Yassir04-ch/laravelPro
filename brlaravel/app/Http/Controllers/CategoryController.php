@@ -11,8 +11,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $category = Category::all();
-        return view('category.index',compact('category'));
+        $categories = Category::all();
+        return view('category.index',compact('categories'));
     }
 
 
@@ -55,7 +55,7 @@ class CategoryController extends Controller
     public function edit(string $id)
     {
         $category = Category::find($id);
-       return view('category.edit',compact('category'));
+       return view('categories.edit',compact('category'));
     }
 
     /**
@@ -82,7 +82,6 @@ class CategoryController extends Controller
     {
         $categorie = Category::find($id);
         $categorie->delete();
-
-        return redirect()->route('categories.index');
+        return redirect()->route('categories.index')
     }
 }

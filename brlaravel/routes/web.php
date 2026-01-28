@@ -16,4 +16,4 @@ Route::resource('posts', PostController::class);
 Route::get('/category/index',[CategoryController::class , "index"]);
 Route::get('/category/create',[CategoryController::class , "create"]);
 Route::get('/category/create',[CategoryController::class , "create"]);
-Route::resource('category', CategoryController::class);
+Route::resource('categories', CategoryController::class);

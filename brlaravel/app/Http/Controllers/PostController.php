@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -11,7 +12,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::with('category')->get();
         return view("post.index",compact('posts'));
         //
     }
@@ -21,7 +22,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('post.create');
+        $categories = Category::all();
+        return view('post.create',compact('categories'));
     }
 
 
@@ -36,7 +38,7 @@ class PostController extends Controller
             'category_id'=>'required|exists:categories,id',
         ]);
         Post::create($request->all());
-        return redirect()->route('post.index');
+        return redirect()->route('posts.index');
     }
 
     /**
@@ -59,12 +61,12 @@ class PostController extends Controller
     }
 
 //   
-    /**
+     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
     {
-          $request->validate([
+        $request->validate([
             'title'=>'required|string|max:255',
             'body'=>'required|string',
             'category_id'=>'required|exists:categories,id',
