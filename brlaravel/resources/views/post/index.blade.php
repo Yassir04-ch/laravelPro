@@ -27,17 +27,26 @@
         </div>
 
         <div class="mb-8">
-            <form action="/post/index" method="GET">
-                <select name="category" class="p-3 rounded-xl border">
-                    <option>All Categories</option>
-                    @foreach($categories as $category)
-                        <option value="{{ $category->id }}">
-                            {{ $category->name }}
-                        </option>
-                    @endforeach
-                </select>
-           <button type="submit" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 text-slate-400 hover:bg-red-50 hover:text-red-600 transition-all" title="Delete">serch</button>
-            </form>
+           <form action="/post/index" method="GET" class="flex flex-wrap items-center gap-4 bg-white p-4 rounded-[2rem] border border-slate-100 shadow-sm w-fit">
+    
+        <div class="relative min-w-[200px]">
+            <select name="category" 
+                    class="w-full appearance-none pl-4 pr-10 py-3 rounded-xl border border-slate-100 bg-slate-50/50 text-slate-600 font-semibold focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all cursor-pointer">
+                <option value="">All Categories</option>
+                @foreach($categories as $category)
+                    <option value="{{ $category->id }}">
+                        {{ $category->name }}
+                    </option>
+                @endforeach
+            </select>
+            <i class="fas fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none text-xs"></i>
+        </div>
+
+        <button type="submit" class="flex items-center gap-2 px-8 py-3 rounded-xl bg-slate-900 text-white hover:bg-indigo-600 hover:shadow-[0_10px_20px_rgba(79,70,229,0.3)] transition-all duration-300 font-bold text-xs uppercase tracking-widest group">
+            <i class="fas fa-filter text-[10px] group-hover:rotate-12 transition-transform"></i>
+            <span>Filter</span>
+        </button>
+    </form>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

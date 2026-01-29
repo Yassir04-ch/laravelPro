@@ -13,15 +13,14 @@ class PostController extends Controller
     public function index(Request $request)
     {
         $categories = Category::all();
+      if($request->has('category') && $request->category != ''){
 
-        if($request->has('category') && $request->category != ''){
-            $posts = Post::with('category')->where('category_id',$request->category)->get();
-        }
-        else {
-         $posts = Post::with('category')->get();
-
-        }
-        return view("post.index",compact('posts','categories'));
+        $posts = Post::with('category')->where('category_id',$request->category)->get();
+      }
+      else{
+        $posts = Post::with('category')->get();
+      }
+      return view('post.index',compact('posts','categories'));
     }
 
     /**
@@ -51,7 +50,7 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
         $post = Post::find($id);
         return view('post.show',compact('post'));
