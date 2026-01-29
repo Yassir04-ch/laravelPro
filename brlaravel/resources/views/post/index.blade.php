@@ -26,6 +26,20 @@
             </a>
         </div>
 
+        <div class="mb-8">
+            <form action="/post/index" method="GET">
+                <select name="category" class="p-3 rounded-xl border">
+                    <option>All Categories</option>
+                    @foreach($categories as $category)
+                        <option value="{{ $category->id }}">
+                            {{ $category->name }}
+                        </option>
+                    @endforeach
+                </select>
+           <button type="submit" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 text-slate-400 hover:bg-red-50 hover:text-red-600 transition-all" title="Delete">serch</button>
+            </form>
+        </div>
+
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
             @foreach($posts as $post)
