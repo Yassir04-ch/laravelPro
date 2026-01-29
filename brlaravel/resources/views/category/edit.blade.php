@@ -21,7 +21,7 @@
         </div>
 
         <div class="bg-white rounded-[2.5rem] border border-slate-100 p-10 shadow-xl">
-            <form action="/categories/{{ $category }}" method="POST" class="space-y-8">
+            <form action="{{route('categories.update' , $category)}}" method="POST" class="space-y-8">
                 @csrf
                 @method('PUT')
 

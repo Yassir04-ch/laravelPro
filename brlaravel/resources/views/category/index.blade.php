@@ -20,6 +20,10 @@
             <a href="/categories/create" class="inline-flex items-center px-6 py-3 bg-emerald-600 text-white font-bold rounded-2xl hover:bg-emerald-700 shadow-lg shadow-emerald-200 transition-all">
                 <i class="fas fa-plus-circle mr-2"></i> Add New Category
             </a>
+            <a href="/post/index" class="group relative inline-flex items-center gap-2 px-8 py-4 bg-slate-900 text-white font-bold rounded-2xl transition-all hover:bg-indigo-600 hover:shadow-[0_20px_50px_rgba(79,70,229,0.3)] overflow-hidden">
+                <span class="relative z-10 text-sm uppercase tracking-widest">posts</span>
+                <i class="fas fa-arrow-right relative z-10 group-hover:translate-x-1 transition-transform"></i>
+            </a>
         </div>
 
        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -32,10 +36,10 @@
                 </div>
                 
                 <div class="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <a href="/categories/{{ $category }}/edit" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 text-slate-400 hover:bg-blue-50 hover:text-blue-600 transition-all">
+                    <a href="{{route('categories.edit', $category)}}" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 text-slate-400 hover:bg-blue-50 hover:text-blue-600 transition-all">
                         <i class="fas fa-pen text-sm"></i>
                     </a>
-                    <form action="/categories/{{$category }}" method="POST">
+                    <form action="{{ route('categories.destroy', $category) }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 text-slate-400 hover:bg-red-50 hover:text-red-600 transition-all">

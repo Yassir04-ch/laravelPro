@@ -18,7 +18,7 @@
             <div class="absolute top-[-20%] right-[-10%] w-64 h-64 bg-indigo-600/20 rounded-full blur-3xl"></div>
         </div>
 
-        <form action="/post/{{$post)}}" method="POST" class="p-8 md:p-12 space-y-6">
+        <form action="{{route('post.update', $post)}}" method="POST" class="p-8 md:p-12 space-y-6">
             @csrf
             @method('PUT')
 

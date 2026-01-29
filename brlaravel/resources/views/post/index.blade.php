@@ -54,11 +54,11 @@
                     
                     <div class="flex items-center justify-between pt-6 border-t border-slate-50">
                         <div class="flex gap-4">
-                            <a href="/post/{{$post}}/edit" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 text-slate-400 hover:bg-indigo-50 hover:text-indigo-600 transition-all" title="Edit">
+                            <a href="{{route('post.edit', $post)}}" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 text-slate-400 hover:bg-indigo-50 hover:text-indigo-600 transition-all" title="Edit">
                                 <i class="fas fa-pen-nib text-sm"></i>
                             </a>
                             
-                            <form action="/post/{{$post}}" method="POST" >
+                            <form action="{{ route('post.destroy', $post) }}" method="POST" >
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 text-slate-400 hover:bg-red-50 hover:text-red-600 transition-all" title="Delete">
