@@ -18,7 +18,7 @@
             <div class="absolute top-[-20%] right-[-10%] w-64 h-64 bg-indigo-600/20 rounded-full blur-3xl"></div>
         </div>
 
-        <form action="{{ route('posts.update', $post)}}" method="POST" class="p-8 md:p-12 space-y-6">
+        <form action="/post/{{$post)}}" method="POST" class="p-8 md:p-12 space-y-6">
             @csrf
             @method('PUT')
 
@@ -56,7 +56,7 @@
                     class="w-full sm:w-auto px-10 py-4 bg-indigo-600 text-white font-bold rounded-2xl hover:bg-indigo-700 hover:shadow-lg hover:shadow-indigo-200 transition-all active:scale-95">
                     Update Post
                 </button>
-                <a href="#" class="w-full sm:w-auto px-10 py-4 bg-white text-slate-500 font-bold rounded-2xl border border-slate-200 hover:bg-slate-50 hover:text-slate-700 transition-all text-center">
+                <a href="/post/index" class="w-full sm:w-auto px-10 py-4 bg-white text-slate-500 font-bold rounded-2xl border border-slate-200 hover:bg-slate-50 hover:text-slate-700 transition-all text-center">
                     Cancel
                 </a>
             </div>

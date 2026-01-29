@@ -15,13 +15,13 @@
                 <h1 class="text-4xl font-extrabold text-slate-900 tracking-tight">Edit Category</h1>
                 <p class="text-slate-500 mt-1 font-medium">Modify the details of: <span class="text-indigo-600">{{ $category->name }}</span></p>
             </div>
-            <a href="{{ route('categories.index') }}" class="text-slate-400 hover:text-slate-600 transition-all">
+            <a href="/post/index" class="text-slate-400 hover:text-slate-600 transition-all">
                 <i class="fas fa-times text-2xl"></i>
             </a>
         </div>
 
         <div class="bg-white rounded-[2.5rem] border border-slate-100 p-10 shadow-xl">
-            <form action="{{ route('categories.update', $category) }}" method="POST" class="space-y-8">
+            <form action="/categories/{{ $category }}" method="POST" class="space-y-8">
                 @csrf
                 @method('PUT')
 

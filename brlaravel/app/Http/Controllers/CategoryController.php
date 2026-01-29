@@ -35,17 +35,16 @@ class CategoryController extends Controller
         ]);
 
         Category::create($request->all());
-        return redirect()->route('category.index');
+        return redirect('/categories/index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Category $category)
     {
-         
-            $category = Category::find($id);
-            return view('category.show',compact('category'));
+
+        return view('category.show',compact('category'));
         
     }
 
@@ -69,7 +68,7 @@ class CategoryController extends Controller
 
         $category->update($validated);
 
-        return redirect()->route('categories.index');
+        return redirect('/categories/index');
 
     }
 
@@ -79,6 +78,6 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
          $category->delete();
-        return redirect()->route('categories.index');
+        return redirect('/categories/index');
     }
 }

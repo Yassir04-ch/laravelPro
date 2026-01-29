@@ -38,7 +38,7 @@ class PostController extends Controller
             'category_id'=>'required|exists:categories,id',
         ]);
         Post::create($request->all());
-        return redirect()->route('posts.index');
+        return redirect('/post/index');
     }
 
     /**
@@ -74,7 +74,7 @@ class PostController extends Controller
         ]);
 
         $post->update($validated);
-        return redirect()->route('posts.index');
+        return redirect('/post/index');
     }
 
     /**
@@ -83,7 +83,7 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
          $post->delete();
-        return redirect()->route('post.index');
+        return redirect('/post/index');
     }
 }
 
