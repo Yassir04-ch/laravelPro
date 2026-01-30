@@ -55,20 +55,19 @@
             </p>
 
             <div class="mt-auto pt-6 border-t border-slate-50 flex items-center justify-between text-xs font-bold uppercase tracking-widest">
-                <a href="/post/index" class="text-emerald-600 hover:translate-x-1 transition-transform inline-flex items-center">
-                    View Posts <i class="fas fa-chevron-right ml-2 text-[10px]"></i>
-                </a>
+          <form action="/post/index" method="GET" class="flex flex-wrap items-center gap-4 bg-white p-4 rounded-[2rem] border border-slate-100 shadow-sm w-fit">
+               <input type="hidden" name="category" value="{{ $category->id}}">
+               
+                <button type="submit" class="flex items-center gap-2 px-8 py-3 rounded-xl bg-slate-900 text-white hover:bg-indigo-600 hover:shadow-[0_10px_20px_rgba(79,70,229,0.3)] transition-all duration-300 font-bold text-xs uppercase tracking-widest group">
+                    <i class="fas fa-filter text-[10px] group-hover:rotate-12 transition-transform"></i>
+                    <span>View Posts</span>
+                </button>
+           </form>
+               
             </div>
           </div>
-             @endforeach
+        @endforeach
         </div>
-        <!-- 
-            <div class="bg-slate-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <i class="fas fa-folder-open text-slate-300 text-3xl"></i>
-            </div>
-            <h3 class="text-xl font-bold text-slate-900">No categories found</h3>
-            <p class="text-slate-500 mt-2">Start by creating your first category to organize your blog.</p>
-        </div> -->
     </div>
 
 </body>

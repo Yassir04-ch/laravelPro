@@ -34,7 +34,7 @@
                     class="w-full appearance-none pl-4 pr-10 py-3 rounded-xl border border-slate-100 bg-slate-50/50 text-slate-600 font-semibold focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all cursor-pointer">
                 <option value="">All Categories</option>
                 @foreach($categories as $category)
-                    <option value="{{ $category->id }}">
+                    <option value="{{ $category->id }}" >
                         {{ $category->name }}
                     </option>
                 @endforeach
